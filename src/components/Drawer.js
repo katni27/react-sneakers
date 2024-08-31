@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function Drawer({ items, onClose }) {
+function Drawer({ items, onClose, onRemove }) {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.body.classList.add("overflow-hidden");
@@ -37,6 +37,7 @@ function Drawer({ items, onClose }) {
                 className="removeBtn"
                 src="/img/btn-remove.svg"
                 alt="Remove"
+                onClick={() => onRemove(obj.id)}
               />
             </div>
           ))}
